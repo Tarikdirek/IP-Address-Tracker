@@ -1,15 +1,24 @@
 
+window.onload = loadLocation()
 
-var map = L.map("map").setView([37.878563, 41.125728], 13);
+async function loadLocation() {
+  let response = await fetch("https://api.ipify.org?format=json")
+  let data = await response.json()
+  let locationData = await getLocation(data.ip)
+  parseData(locationData)
+  var map = L.map("map").setView([locationData.location.lat, locationData.location.lng], 13);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+  
+  // Add a marker
+  var marker = L.marker([locationData.location.lat, locationData.location.lng]).addTo(map);
+  marker.bindPopup("You are here!").openPopup();
 
-// Add a marker
-var marker = L.marker([37.878563, 41.125728]).addTo(map);
-marker.bindPopup("A simple marker!").openPopup();
+}
+
 
 let button = document.getElementsByClassName("search-btn")[0];
 
