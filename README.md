@@ -19,8 +19,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/Tarikdirek)
-- Live Site URL: [](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/Tarikdirek)
+- Live Site URL: [TrackerIP](https://trackeripmaster.netlify.app/)
 
 ### Built with
 
