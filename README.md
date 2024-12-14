@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github](https://github.com/Tarikdirek)
+- Solution URL: [Github Repo](https://github.com/Tarikdirek/IP-Address-Tracker)
 - Live Site URL: [TrackerIP](https://trackeripmaster.netlify.app/)
 
 ### Built with
