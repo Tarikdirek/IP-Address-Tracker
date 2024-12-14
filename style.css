@@ -84,6 +84,11 @@ body {
   background-color: black;
   color: #ffff;
 }
+
+.search-btn:hover{
+  background-color: rgb(46, 13, 13);
+}
+
 .tracker-content {
   display: grid;
   grid-template-columns:  repeat(4, minmax(140px, 1fr));
@@ -91,6 +96,10 @@ body {
   padding: 1.5em;
   border-radius: 10px;
   gap: 20px;
+}
+
+.tracker-content:hover{
+  background-color: lightgray;
 }
 
 
@@ -103,6 +112,10 @@ body {
   letter-spacing: 0.1em;
   font-weight: bold;
   color: var(--darkGray);
+}
+
+.content-item:hover{
+  color: white;
 }
 .content-item:last-child {
   border: none;
