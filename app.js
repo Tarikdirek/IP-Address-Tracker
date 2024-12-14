@@ -1,12 +1,12 @@
 
 window.onload = loadLocation()
-
+var map,marker;
 async function loadLocation() {
   let response = await fetch("https://api.ipify.org?format=json")
   let data = await response.json()
   let locationData = await getLocation(data.ip)
   parseData(locationData)
-  var map = L.map("map").setView([locationData.location.lat, locationData.location.lng], 13);
+   map = L.map("map").setView([locationData.location.lat, locationData.location.lng], 13);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -14,7 +14,7 @@ async function loadLocation() {
   }).addTo(map);
   
   // Add a marker
-  var marker = L.marker([locationData.location.lat, locationData.location.lng]).addTo(map);
+  marker = L.marker([locationData.location.lat, locationData.location.lng]).addTo(map);
   marker.bindPopup("You are here!").openPopup();
 
 }
